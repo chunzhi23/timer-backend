@@ -1,4 +1,4 @@
-name: CD-prod
+name: Docker Image CI
 
 on:
   push:
