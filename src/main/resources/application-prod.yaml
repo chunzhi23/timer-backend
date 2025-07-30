@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: ${SPRING_DATASOURCE_URL}
-    username: ${SPRING_DATASOURCE_USERNAME}
-    password: ${SPRING_DATASOURCE_PASSWORD}
+    url: jdbc:postgresql://${DB_HOST}:${DB_HOST}/${DB_DATABASE}?user=${DB_USERNAME}&password=${DB_PASSWORD}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
 
   jpa:
     hibernate:
@@ -13,9 +13,9 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         connection:
           driver_class: org.postgresql.Driver
-          url: ${SPRING_DATASOURCE_URL}
-          username: ${SPRING_DATASOURCE_USERNAME}
-          password: ${SPRING_DATASOURCE_PASSWORD}
+          url: jdbc:postgresql://${DB_HOST}:${DB_HOST}/${DB_DATABASE}?user=${DB_USERNAME}&password=${DB_PASSWORD}
+          username: ${DB_USERNAME}
+          password: ${DB_PASSWORD}
         default_batch_fetch_size: 15
     open-in-view: false
     show-sql: false
