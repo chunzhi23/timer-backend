@@ -21,7 +21,7 @@ public class VisitService {
   private final VisitRepository visitRepository;
 
   public VisitResponse createVisit(VisitRequest request) {
-    Visit visit = Visit.of(request.getCookieID(), request.getVisitDate());
+    Visit visit = Visit.of(request.getCookieId(), request.getVisitDate());
     Visit saved = visitRepository.save(visit);
 
     return VisitResponse.from(saved);
