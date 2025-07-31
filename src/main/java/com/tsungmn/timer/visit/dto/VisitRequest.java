@@ -12,8 +12,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class VisitRequest {
 
-  @NotNull(message = "CookieID is missing")
-  private String cookieID;
+  @NotNull(message = "CookieId is missing")
+  private String cookieId;
 
   @NotNull(message = "visitDate is missing")
   private Instant visitDate;
