@@ -37,12 +37,11 @@ public class VisitService {
 
   @Transactional(readOnly = true)
   public List<VisitResponse> getTodayVisits() {
-    LocalDate today = LocalDate.now(ZoneId.systemDefault());
+    ZoneId kstZone = ZoneId.of("Asia/Seoul");
+    LocalDate today = LocalDate.now(kstZone);
 
-    Instant startOfDay = today.atStartOfDay(ZoneId.systemDefault()).toInstant();
-    Instant startOfNextDay = today.plusDays(1)
-        .atStartOfDay(ZoneId.systemDefault())
-        .toInstant();
+    Instant startOfDay = today.atStartOfDay(kstZone).toInstant();
+    Instant startOfNextDay = today.plusDays(1).atStartOfDay(kstZone).toInstant();
 
     return visitRepository.findAll()
         .stream()
